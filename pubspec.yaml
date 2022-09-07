@@ -1,6 +1,6 @@
 name: efficient_sdk
 description: efficient的SDK插件
-version: 0.0.2
+version: 0.0.3
 
 environment:
   sdk: '>=2.18.0 <3.0.0'
@@ -12,6 +12,7 @@ dependencies:
   qr_flutter: ^4.0.0
   web_socket_channel: ^2.2.0
   plugin_platform_interface: ^2.1.2
+  lpinyin: ^2.0.3
   flutter:
     sdk: flutter
 

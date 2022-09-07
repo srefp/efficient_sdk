@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:lpinyin/lpinyin.dart';
 
 /// String扩展类
 extension StringExtension on String {
+  /// 获取拼音
+  String get pinyinFirstLetter =>
+      PinyinHelper.getFirstWordPinyin(this).firstToUpper;
 
   /// 判断为空或者为空字符串
   bool get isBlank {
