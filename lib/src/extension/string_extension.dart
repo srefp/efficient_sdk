@@ -4,8 +4,9 @@ import 'package:lpinyin/lpinyin.dart';
 /// String扩展类
 extension StringExtension on String {
   /// 获取拼音
-  String get pinyinFirstLetter =>
-      PinyinHelper.getFirstWordPinyin(this)[0].toUpperCase();
+  String get pinyinFirstLetter => this.isEmpty
+      ? ''
+      : PinyinHelper.getFirstWordPinyin(this)[0].toUpperCase();
 
   /// 判断为空或者为空字符串
   bool get isBlank {
