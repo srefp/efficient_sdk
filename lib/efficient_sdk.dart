@@ -2,6 +2,9 @@ library efficient_sdk;
 
 export 'src/date/date_utils.dart';
 export 'src/encrypt/des_utils.dart';
+export 'src/extension/date_time_extension.dart';
+export 'src/extension/int_extension.dart';
+export 'src/extension/int_list_extension.dart';
 export 'src/extension/list_extensions.dart';
 export 'src/extension/string_extension.dart';
 export 'src/extension/string_list_extensions.dart';

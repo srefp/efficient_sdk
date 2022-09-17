@@ -1,8 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:lpinyin/lpinyin.dart';
+import 'package:intl/intl.dart';
 
 /// String扩展类
 extension StringExtension on String {
+
+  /// 转换为List<int>
+  List<int> get getIntList {
+    List<String> list = this.split(',');
+    return list.map((e) => int.parse(e)).toList();
+  }
+
+  /// 转换为日期
+  DateTime dateTime({required String format}) {
+    return DateFormat(format).parse(this);
+  }
+
   /// 获取拼音
   String get pinyinFirstLetter => this.isEmpty
       ? ''

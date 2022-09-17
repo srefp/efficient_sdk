@@ -1,27 +1,26 @@
+import 'package:efficient_sdk_example/app/widgets/display_card.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../../../widgets/display_card.dart';
-import '../controllers/pinyin_controller.dart';
+import '../controllers/datetime_controller.dart';
 
-class PinyinView extends GetView<PinyinController> {
+class DatetimeView extends GetView<DatetimeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('拼音'),
+        title: Text('日期时间'),
         centerTitle: true,
       ),
       body: ListView(
         children: [
           Obx(() {
             return DisplayCard(
-              textEditingController:
-                  controller.getFirstCharacterOfChineseController,
-              callback: controller.getFirstCharacterOfChinese,
+              textEditingController: controller.inputController,
+              callback: controller.convertStringToDate,
               res: controller.res1.value,
-              description: '获取汉字首字母',
+              description: '字符串转日期',
             );
           }),
         ],

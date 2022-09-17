@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/datetime/bindings/datetime_binding.dart';
+import '../modules/datetime/views/datetime_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/pinyin/bindings/pinyin_binding.dart';
@@ -22,6 +24,11 @@ class AppPages {
       name: _Paths.PINYIN,
       page: () => PinyinView(),
       binding: PinyinBinding(),
+    ),
+    GetPage(
+      name: _Paths.DATETIME,
+      page: () => DatetimeView(),
+      binding: DatetimeBinding(),
     ),
   ];
 }

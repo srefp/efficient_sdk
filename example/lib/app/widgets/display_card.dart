@@ -6,11 +6,20 @@ class DisplayCard extends StatelessWidget {
     required this.textEditingController,
     required this.callback,
     required this.res,
+    required this.description,
   }) : super(key: key);
 
+  /// 输入框控制器
   final TextEditingController textEditingController;
+
+  /// 回调函数
   final VoidCallback callback;
+
+  /// 结果
   final String res;
+
+  /// 功能描述
+  final String description;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +42,7 @@ class DisplayCard extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 10),
                 child: TextButton(
                   onPressed: callback,
-                  child: Text('获取汉字首字母'),
+                  child: Text(description),
                 ),
               ),
               Padding(

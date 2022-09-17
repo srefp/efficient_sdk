@@ -8,6 +8,17 @@ String getTodayString() {
       DateTime.now(), [yyyy, '-', mm, '-', dd, ' ', HH, ':', nn, ':', ss]);
 }
 
+/// 获取今天月份
+int getMonth() {
+  return DateTime.now().month;
+}
+
+/// 获取本周的周一日期
+DateTime getMonDayDateOfCurrentWeek() {
+  final now = DateTime.now();
+  return now.subtract(Duration(days: now.weekday - 1));
+}
+
 /// 获取今天日期 [yyyy/MM/dd]
 String getTodayDateString() {
   return formatDate(
