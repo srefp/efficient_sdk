@@ -4,7 +4,6 @@ import 'package:intl/intl.dart';
 
 /// String扩展类
 extension StringExtension on String {
-
   /// 转换为List<int>
   List<int> get getIntList {
     List<String> list = this.split(',');
@@ -17,9 +16,14 @@ extension StringExtension on String {
   }
 
   /// 获取拼音
-  String get pinyinFirstLetter => this.isEmpty
-      ? ''
-      : PinyinHelper.getFirstWordPinyin(this)[0].toUpperCase();
+  String get pinyinFirstLetter {
+    if (this.startsWith('调度')) {
+      return 'D';
+    }
+    return this.isEmpty
+        ? ''
+        : PinyinHelper.getFirstWordPinyin(this)[0].toUpperCase();
+  }
 
   /// 判断为空或者为空字符串
   bool get isBlank {
