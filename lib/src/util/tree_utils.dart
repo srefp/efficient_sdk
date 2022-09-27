@@ -1,6 +1,6 @@
-extension TreeExtension on List<Map<String, dynamic>> {
+extension TreeExtension on List<dynamic> {
   /// 根据id和parentId将列表结构转换成树形结构
-  dynamic get tree {
+  List<dynamic> get tree {
     final config = {
       "id": 'id',
       "parentId": 'parentId',
