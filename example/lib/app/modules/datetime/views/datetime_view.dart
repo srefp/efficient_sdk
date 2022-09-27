@@ -23,6 +23,14 @@ class DatetimeView extends GetView<DatetimeController> {
               description: '字符串转日期',
             );
           }),
+          Obx(() {
+            return DisplayCard(
+              textEditingController: controller.secondsInputController,
+              callback: controller.convertIntToTime,
+              res: controller.res2.value,
+              description: '整数转时间',
+            );
+          })
         ],
       ),
     );
