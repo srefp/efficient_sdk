@@ -4,11 +4,11 @@ extension TreeExtension on List<Map<String, dynamic>> {
     final config = {
       "id": 'id',
       "parentId": 'parentId',
-      "childrenList": 'children',
+      "children": 'children',
     };
 
     // parentId -> d列表，具有共同parentId的json对象
-    final childrenListMap = {};
+    final childrenMap = {};
     // id -> d，根据id找到json对象
     final nodeIds = {};
     // 根节点
@@ -16,11 +16,11 @@ extension TreeExtension on List<Map<String, dynamic>> {
 
     for (var d in this) {
       final parentId = d[config["parentId"]];
-      if (childrenListMap[parentId] == null) {
-        childrenListMap[parentId] = [];
+      if (childrenMap[parentId] == null) {
+        childrenMap[parentId] = [];
       }
       nodeIds[d[config["id"]]] = d;
-      childrenListMap[parentId].add(d);
+      childrenMap[parentId].add(d);
     }
 
     for (var d in this) {
@@ -32,18 +32,18 @@ extension TreeExtension on List<Map<String, dynamic>> {
     }
 
     for (var t in tree) {
-      adaptToChildrenList(t, childrenListMap, config);
+      adaptToChildrenList(t, childrenMap, config);
     }
     return tree;
   }
 
-  dynamic adaptToChildrenList(o, childrenListMap, config) {
-    if (childrenListMap[o[config["id"]]] != null) {
-      o[config["childrenList"]] = childrenListMap[o[config["id"]]];
+  dynamic adaptToChildrenList(o, childrenMap, config) {
+    if (childrenMap[o[config["id"]]] != null) {
+      o[config["children"]] = childrenMap[o[config["id"]]];
     }
-    if (o[config["childrenList"]] != null) {
-      for (var c in o[config["childrenList"]]) {
-        adaptToChildrenList(c, childrenListMap, config);
+    if (o[config["children"]] != null) {
+      for (var c in o[config["children"]]) {
+        adaptToChildrenList(c, childrenMap, config);
       }
     }
   }
