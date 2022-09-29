@@ -27,12 +27,12 @@ main() {
   {
     "id": 4,
     "parentId": 0,
-    "name": "公司领导",
+    "name": "部门领导",
     "children": []
   },
   {
     "id": 5,
-    "parentId": 0,
+    "parentId": 4,
     "name": "作业部门",
     "children": []
   },
