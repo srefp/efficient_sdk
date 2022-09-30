@@ -3,7 +3,7 @@ description: efficient的SDK插件
 version: 0.0.4
 
 environment:
-  sdk: '>=2.18.0 <3.0.0'
+  sdk: '>=2.0.0 <3.0.0'
 
 dependencies:
   dart_des: ^1.0.2
