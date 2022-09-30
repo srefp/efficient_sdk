@@ -1,6 +1,6 @@
 name: efficient_sdk
 description: efficient的SDK插件
-version: 0.0.4
+version: 1.0.0
 
 environment:
   sdk: '>=2.14.0 <3.0.0'
